@@ -1,0 +1,275 @@
+/* Combined style.css */
+
+/* Import the Google font */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Fredoka', sans-serif;
+  color: white;
+  background-color: #333;
+}
+
+/* Header Styles */
+header {
+  text-align: center;
+  padding: 2rem;
+  background: url('../images/goliath.png') no-repeat center center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 1rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+/* Main Content Styles */
+main {
+  background: url('../images/maverick.jpg') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Tips Section Styles */
+.tips-section {
+  width: 80%;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.tips-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+/* Slick Carousel Styles */
+.tips-carousel {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+.tip-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.tip-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.tip-item p {
+  font-size: 1.2rem;
+  color: #fff;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Slick Carousel Navigation (Arrows & Dots) */
+.slick-prev, .slick-next {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 3rem;
+    width: 300px;
+    height: 300px;
+    z-index: 2;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 1.0s ease;
+  }
+  
+  .slick-prev {
+    left: -60px;
+  }
+  
+  .slick-next {
+    right: -60px;
+  }
+  
+  .slick-prev:hover, .slick-next:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Slick Dots */
+  .slick-dots {
+    bottom: -40px;
+    text-align: center;
+  }
+  
+  .slick-dots li {
+    margin: 0 6px;
+  }
+  
+  .slick-dots li button {
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    opacity: 0.7;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  
+  .slick-dots li.slick-active button {
+    background-color: #00acee;
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  
+
+/* Panel Container Styles */
+.panel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  flex-wrap: wrap;
+}
+
+/* Individual Panel Styles */
+.panel {
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.panel:hover {
+  transform: scale(1.05);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* About Me Section */
+.about-me {
+  text-align: center;
+  width: calc(2 * 250px + 2 * 2rem); /* Width of two panels plus gap */
+  margin: 3rem 0;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.6); /* Same as panels */
+  color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Footer Styles */
+footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  text-align: center;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer li {
+  display: inline;
+  margin: 0 10px;
+}
+
+footer a {
+  color: #00acee;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+
+/* Custom Styles for Top 10 Coasters Page */
+.coaster {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 1s ease;
+}
+
+.coaster .content {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 800px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.coaster iframe {
+  margin-top: 1rem;
+}
+
+/* Coaster Details (10-1 Order) */
+.coaster h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.coaster p {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}
+
+/* Footer for Top 10 Coasters */
+footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  text-align: center;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer li {
+  display: inline;
+  margin: 0 10px;
+}
+
+footer a {
+  color: #00acee;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
