@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Favorite Parks</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/jpeg" href="images/greatlakescoasters.jpg" />
+  <style>
+    .parks-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      padding: 1rem;
+      justify-items: center;
+    }
+
+    .park-panel {
+      position: relative;
+      height: 200px;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+      border-radius: 10px;
+      text-align: center;
+      text-shadow: 1px 1px 3px black;
+      width: 100%;
+    }
+
+    .park-main {
+      background: url('images/magickingdom.JPG') no-repeat center center;
+      background-size: cover;
+      transition: background-image 0.5s ease-in-out;
+    }
+
+    .park-details {
+      display: none;
+      padding: 2rem;
+      text-align: center;
+      background-color: rgba(12, 9, 9, 0.286);
+      margin-top: 2rem;
+      border-radius: 10px;
+    }
+
+    .park-details.active {
+      display: block;
+    }
+
+    .back-button {
+      margin-top: 2rem;
+      background: #333;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .parks-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>My Favorite Parks</h1>
+    <nav>
+      <a href="index.html">Home Page</a>
+      <a href="top10.html">My Top 10 Coasters</a>
+      <a href="tips.html">Tips & Tricks</a>
+    </nav>
+  </header>
+
+  <main class="park-main" id="parkMain">
+    <div id="parks" class="parks-grid">
+      <div class="park-panel"  onclick="showDetails('cedarpoint')">Cedar Point</div>
+      <div class="park-panel"  onclick="showDetails('islands')">Islands of Adventure</div>
+      <div class="park-panel"  onclick="showDetails('hollywood')">Hollywood Studios</div>
+      <div class="park-panel"  onclick="showDetails('dollywood')">Dollywood</div>
+      <div class="park-panel"  onclick="showDetails('magicmountain')">Magic Mountain</div>
+    </div>
+
+    <section id="details" class="park-details"></section>
+  </main>
+
+  <footer>
+    <p>All Photography Taken by Evan Chechak</p>
+    <p>Quicklinks:</p>
+    <ul>
+      <li>
+        <a href="https://instagram.com/greatlakescoasters" target="_blank">
+          <img src="images/instagram-logo.png" alt="Instagram" style="width: 16px; vertical-align: middle; margin-right: 5px;" />
+          Visit my Roller Coaster Instagram!
+        </a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/document/d/1eSHZkSOIEBmOY2MxweNeQkbLmtBepS5P7DPJvBXxuO4/edit?tab=t.0" target="_blank">
+          <img src="images/google-docs-logo.png" alt="Google Docs" style="width: 16px; vertical-align: middle; margin-right: 5px;" />
+          See my Entire Roller Coaster Ranking!
+        </a>
+      </li>
+    </ul>
+  </footer>
+
+  <script>
+    const parksInfo = {
+      cedarpoint: {
+        name: "Cedar Point",
+        operatedBy: "Cedar Fair",
+        location: "Sandusky, Ohio",
+        opened: "1870",
+        attractions: "Steel Vengeance, Millennium Force, Maverick",
+        hiddenGem: "Magnum Magic Seat",
+        background: "images/cedarpoint.jpg"
+      },
+      islands: {
+        name: "Universal Islands of Adventure",
+        operatedBy: "Universal Parks & Resorts",
+        location: "Orlando, Florida",
+        opened: "1999",
+        attractions: "VelociCoaster, Hagrid's Motorbike Adventure, Hulk",
+        hiddenGem: "Dr Seuss Land",
+        background: "images/islandsofadventure.jpg"
+      },
+      hollywood: {
+        name: "Disney's Hollywood Studios",
+        operatedBy: "Walt Disney Parks",
+        location: "Orlando, Florida",
+        opened: "1989",
+        attractions: "Rise of the Resistance, Tower of Terror, Slinky Dog Dash",
+        hiddenGem: "MuppetVision 3D",
+        background: "images/hollywoodstudios.jpg"
+      },
+      dollywood: {
+        name: "Dollywood",
+        operatedBy: "Herschend Family Entertainment",
+        location: "Pigeon Forge, Tennessee",
+        opened: "1986",
+        attractions: "Lightning Rod, Wild Eagle, Mystery Mine",
+        hiddenGem: "Cinnamon Bread",
+        background: "images/dollywood.jpg"
+      },
+      magicmountain: {
+        name: "Six Flags Magic Mountain",
+        operatedBy: "Six Flags",
+        location: "Valencia, California",
+        opened: "1971",
+        attractions: "X2, Twisted Colossus, Tatsu",
+        hiddenGem: "Wonder Woman single rail coaster",
+        background: "images/magicmountain.jpg"
+      }
+    };
+
+    function showDetails(key) {
+      const park = parksInfo[key];
+      const section = document.getElementById("details");
+      const main = document.getElementById("parkMain");
+
+      section.classList.add("active");
+      section.innerHTML = `
+        <h2>${park.name}</h2>
+        <p><strong>Operated By:</strong> ${park.operatedBy}</p>
+        <p><strong>Location:</strong> ${park.location}</p>
+        <p><strong>Opened:</strong> ${park.opened}</p>
+        <p><strong>Biggest Attractions:</strong> ${park.attractions}</p>
+        <p><strong>Hidden Gem:</strong> ${park.hiddenGem}</p>
+      `;
+
+      main.style.backgroundImage = `url('${park.background}')`;
+    }
+  </script>
+</body>
+
+</html>

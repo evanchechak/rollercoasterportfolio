@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tips & Tricks</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/jpeg" href="images/greatlakescoasters.jpg" />
+
+  <!-- Slick Carousel CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+
+  <style>
+    .tips-section {
+      transition: background-image 0.6s ease;
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 2em;
+      border-radius: 10px;
+      min-height: 300px;
+    }
+    .tip-item {
+      padding: 1em;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Roller Coaster Tips & Tricks</h1>
+    <nav>
+      <a href="index.html">Home Page</a>
+      <a href="parks.html">Favorite Parks</a>
+      <a href="tips.html">Tips & Tricks</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="tips-section" id="tipsSection">
+      <h2>My 10 Best Amusement Park Tips</h2>
+
+      <div class="tips-carousel">
+        <div class="tip-item">
+            <p><strong>Tip 1:</strong> Always arrive at the park at least 30 minutes prior to the gates opening. This will ensure you can get on at least one ride with little to no wait if you head straight there when the park opens!</p>
+        </div>
+        <div class="tip-item">
+            <p><strong>Tip 2:</strong> If you are riding Magnum XL-200, choose <i>my</i> magic seat, which is seat 17. This seat will ensure the minimal amount of roughness, maximize airtime, and give a great view of Lake Erie!</p>
+        </div>
+        <div class="tip-item">
+            <p><strong>Tip 3:</strong> Always buy the all day drink plans if they are available and split them amongst your group. Often times you can quench your thirst between rides and in line while under the hot sun. This tip will ensure that you aren't stuck paying outrageous prices all day.</p>
+        </div>
+        <div class="tip-item">
+            <p><strong>Tip 4:</strong> Wait to buy merch or play carnival games until later in the day, so you don't have to carry around all your items with you all day. However, some parks will offer to send goods you purchase directly to your room if you are staying on property.</p>
+        </div>
+        <div class="tip-item">
+            <p><strong>Tip 5:</strong> Always use the single rider line, especially on rides like Men In Black at Universal Studios Orlando, Expedition Everest at Disney's Animal Kingdom, and Test Track at Disney's EPCOT. These lines will save you so much time throughout your day that you can spend with your party instead of waiting in line with them.</p>
+        </div>
+        <div class="tip-item">
+            <p><strong>Tip 6:</strong> Sometimes going on a day with a light chance of rain will lead to the perfect time, as many guests will postpone their visit in hope of a sunny day. If it rains for only a few hours, you will practically have the park to yourself afterwards!</p>
+        </div>
+        <div class="tip-item">
+            <p><strong>Tip 7:</strong> Try to bring as little as possible inside the parks. Many theme parks nowadays have strict no loose items policies for their most popular attractions, which can force you to store items in a locker and spend unwanted time and money.</p>
+        </div>
+        <div class="tip-item">
+            <p><strong>Tip 8:</strong> Never get the chicken tenders from Cedar Point, they are always disappointing :/</p>
+        </div>
+        <div class="tip-item">
+            <p><strong>Tip 9:</strong> Do your best to avoid eating your meals at peak times, such as noon, as that is when everyone wants to eat. This causes the food lines to be extremely crowded and the ride lines to get lighter!</p>
+        </div>
+        <div class="tip-item">
+            <p><strong>Tip 10:</strong> Relax! If you can't ride everything or a ride is closed when you visit just remember: that's even more of an incentive to come back!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>All Photography Taken by Evan Chechak</p>
+    <p>Quicklinks:</p>
+    <ul>
+      <li>
+        <a href="https://instagram.com/greatlakescoasters" target="_blank">
+          <img src="images/instagram-logo.png" alt="Instagram" style="width: 16px; vertical-align: middle; margin-right: 5px;" />
+          Visit my Roller Coaster Instagram!
+        </a>
+      </li>
+      <li>
+        <a href="https://docs.google.com/document/d/1eSHZkSOIEBmOY2MxweNeQkbLmtBepS5P7DPJvBXxuO4/edit?tab=t.0" target="_blank">
+          <img src="images/google-docs-logo.png" alt="Google Docs" style="width: 16px; vertical-align: middle; margin-right: 5px;" />
+          See my Entire Roller Coaster Ranking!
+        </a>
+      </li>
+    </ul>
+  </footer>
+
+  <!-- Slick Carousel JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      const backgrounds = [
+        'images/tip1.jpg',
+        'images/tip2.jpg',
+        'images/tip3.jpg',
+        'images/tip4.jpg',
+        'images/tip5.jpg',
+        'images/tip6.jpg',
+        'images/tip7.jpg',
+        'images/tip8.jpg',
+        'images/tip9.jpg',
+        'images/tip10.jpg'
+      ];
+
+      $('.tips-carousel').slick({
+        arrows: true,
+        dots: true,
+        infinite: true,
+        speed: 500,
+        fade: true,
+        cssEase: 'linear'
+      });
+
+      // Set initial background
+      $('main').css('background-image', `url(${backgrounds[0]})`);
+
+      // Change background on slide change
+      $('.tips-carousel').on('afterChange', function(event, slick, currentSlide){
+        $('main').css('background-image', `url(${backgrounds[currentSlide]})`);
+      });
+    });
+  </script>
+</body>
+
+</html>
